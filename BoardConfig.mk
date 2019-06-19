@@ -63,8 +63,8 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/zuk/msm8996
 TARGET_KERNEL_CONFIG := statix_defconfig
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := /home/kanishk/xtnd/prebuilts/gcc/linux-x86/aarch64/gcc9/bin/aarch64-linux-gnu-
-TARGET_KERNEL_CLANG_PATH := /home/kanishk/xtnd/prebuilts/gcc/linux-x86/aarch64/clang9/bin
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := /home/kanishk/omni/prebuilts/gcc/linux-x86/aarch64/gcc9/bin/aarch64-linux-gnu-
+TARGET_KERNEL_CLANG_PATH := /home/kanishk/omni/prebuilts/gcc/linux-x86/aarch64/clang9/bin
 TARGET_KERNEL_CLANG_COMPILE := true
 
 # Webview defs
@@ -93,7 +93,7 @@ AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 BOARD_SUPPORTS_SOUND_TRIGGER := true
 BOARD_USES_ALSA_AUDIO := true
-USE_CUSTOM_AUDIO_POLICY := 1
+USE_CUSTOM_AUDIO_POLICY := 0
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
@@ -113,6 +113,13 @@ DEVICE_SPECIFIC_CAMERA_PATH := $(DEVICE_PATH)/camera
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
+
+#Omni
+TARGET_USES_QCOM_BSP := false
+TARGET_QCOM_DISPLAY_VARIANT := caf-msm8996
+TARGET_QCOM_AUDIO_VARIANT := caf-msm8996
+TARGET_QCOM_MEDIA_VARIANT := caf-msm8996
+TARGET_USE_SDCLANG := true
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
@@ -155,14 +162,6 @@ ifeq ($(HOST_OS),linux)
 	endif
 endif
 PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
-
-#omni sax
-TARGET_USES_QCOM_BSP := true
-TARGET_QCOM_DISPLAY_VARIANT := caf-msm8996
-TARGET_QCOM_AUDIO_VARIANT := caf-msm8996
-TARGET_QCOM_MEDIA_VARIANT := caf-msm8996
-TARGET_USE_SDCLANG := true
-TARGET_QCOM_BLUETOOTH_VARIANT := caf-msm8996
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs

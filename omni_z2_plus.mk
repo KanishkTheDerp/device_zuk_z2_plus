@@ -20,10 +20,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 # Inherit from z2_plus device
 $(call inherit-product, device/zuk/z2_plus/device.mk)
 
-# Inherit some common Xtended stuff.
-$(call inherit-product, vendor/xtended/config/common_full_phone.mk)
+# Inherit some common Omni stuff.
+$(call inherit-product, vendor/omni/config/gsm.mk)
+$(call inherit-product, vendor/omni/config/common.mk)
 
-PRODUCT_NAME := xtended_z2_plus
+PRODUCT_NAME := omni_z2_plus
 PRODUCT_DEVICE := z2_plus
 PRODUCT_MANUFACTURER := ZUK
 PRODUCT_BRAND := ZUK
@@ -31,7 +32,6 @@ PRODUCT_MODEL := Z2 Plus
 
 PRODUCT_GMS_CLIENTID_BASE := android-zuk
 
-XTENDED_BUILD_TYPE := OFFICIAL
 
 TARGET_VENDOR_PRODUCT_NAME := z2_plus
 TARGET_VENDOR_DEVICE_NAME := z2_plus
